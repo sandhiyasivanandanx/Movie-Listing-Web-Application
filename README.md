@@ -1,63 +1,61 @@
-***Important note***:
+# Movie Listing Web Application
 
-This assignment is meant to be completed within **a maximum of 2 hours**.
+## 📌 Overview
+ This project is a simple full-stack web application developed as part of a time-bound assignment. It displays a list of movies and allows users to view detailed information for each movie. The application is built using React for the frontend and Node.js with Express for the backend.
 
-Just attempt this assignment, and submit your code before **2 hours** is up, regardless of whether it is fully completed.
+## 🚀 Features
+ * Display a list of movies with key details (title, tagline, rating)
+ * View detailed information for a selected movie
+ * Backend APIs to fetch movie data
+ * Responsive design for different screen sizes
+ * Navigation between list and detail pages
 
-You may provide **additional documentation** on how you would continue with this assignment if you were given more time.
+## 🛠 Tech Stack
+ * Frontend: React (Create React App)
+ * Backend: Node.js, Express
+ * Data Source: JSON file (`movies_metadata.json`)
 
-# Overview
+## ⚙️ How It Works
+ 1. The backend server loads movie data from a JSON file.
+ 2. APIs are created to:
+   * Fetch all movies
+   * Fetch a single movie by ID
+ 3. The frontend calls these APIs to display:
+   * A movie list page (initial view)
+   * A movie detail page (on selection)
+ 4. Users can navigate between pages using the UI.
 
-You are required to build a simple fullstack web application that displays a list of movies and movie details.
+## 🔌 API Endpoints
+ * `GET /api/movies` → Returns list of movies
+ * `GET /api/movies/:id` → Returns details of a specific movie
 
-Within this project is an existing application boilerplate (React + Node), but you are free to modify it as you want to.
+## ▶️ How to Run
 
-# Steps
+### 1. Install dependencies
+```bash
+npm install
+```
 
-1. Start editing code to complete this assignment
+### 2. Run in development mode
+```bash
+npm run development
+```
 
-# Details
+### 3. Run in production mode
+```bash
+npm run production
+```
 
-* The backend server should load data from the movies data file found in `server/movies_metadata.json`.
-* The backend server should expose APIs to the frontend to achieve the following:
-  * List movies
-  * Get single movie by ID
-* The frontend web application should display 2 different screens:
-  * List movies page (shown initially)
-    * Display the following fields (`title`, `tagline` and `vote_average` [calculated out of 10]) with **responsive web design** (e.g. show 4 columns on a desktop but show only 1 column on a mobile device)
-  * Display single movie page upon clicking movie in list page
-    * Display every field (`release_date` should be localized based on browser settings. `runtime` is calculated in minutes)
-    * Display a button/link to return to list movies page
+## 📊 Dataset
+ The application uses a local JSON dataset (`movies_metadata.json`) containing movie information such as title, tagline, rating, release date, and runtime.
 
-**Additional**
+## ⚠️ Notes
+ * This project was developed as a **time-limited assignment (2 hours)**.
+ * The implementation focuses on core functionality such as API creation and UI rendering.
 
-* Any criteria not stated above may not result in bonus points
-* **Responsive web design** is explained here: [https://www.w3schools.com/html/html_responsive.asp](https://www.w3schools.com/html/html_responsive.asp)
-
-# Code Submission
-
-1. Upload to a public Github repository or a cloud drive (e.g. Google Drive, OneDrive) your code, and email the shared link
-
-*Don't bother trying to email the code directly, because the email attachment will be blocked.*
-
-# Further Project Details (Optional)
-
-## Starter Project - create-react-app and Express
-
-This starter project runs both a webpack development server for front-end work and a back-end server in the same project, at the same time. This is a common scenario when you're building your front end with [create-react-app], and your back end with [Express].
-
-This starter app will get you on your way with this scenario!
-
-## Forwarding requests via a proxy
-
-In **package.json**...
-
-1. if you set your `start` script to `"npm run production"`, it will build the React app and Express will serve the static bundle over port 3000.
-
-2. if you set your `start` script to `"npm run development"`, it will concurrently start the webpack dev server/watcher and the Express server. The latter will be listening on port 3001, but you don't need to change anything in your code because: proxies!
-
-As it stands, the server listens for requests to `/api`; to get this working in `development` mode, we're using [`http-proxy-middleware`] in **src/setupProxy.js** to forward any incoming request to `/api/whatever/endpoint/you/have` over to the `target`, i.e., the Express server.
-
-[create-react-app]: https://create-react-app.dev
-[Express]: https://expressjs.com/
-[`http-proxy-middleware`]: https://github.com/chimurai/http-proxy-middleware
+## 📌 Future Improvements
+ * Enhance UI/UX design and responsiveness
+ * Add search and filtering functionality
+ * Implement pagination for large datasets
+ * Improve error handling and validation
+ * Optimize performance for API responses
